@@ -17,6 +17,13 @@ The Microsoft Deployment Toolkit (MDT) is a free tool for automating Windows and
 
 The ADK, the add-on, and MDT was installed on Windows Server 2016 installation, primarily because of the age of my HP Z420. This server is named LAB. The device was modified to include a 4th hard disk, an SSD, which was placed below the CD-ROM. Three 1 TB HDDs were added to a storage pool, with the equivalent of RAID 5, to LAB as to allow for one disk to fail (my equipment is old). These disks were virtualized so as for the three disks to be accesible from D: .  
 
+Once MDT is installed, a Deployment Share is created. From the share, things such as Applications and Operating Systems may be imported, and these processes will generate PowerShell scripts to be used later. Example scripts will be included below.
+
+In order to import the Operating System, an ISO must be mounted and include an install.wim file. Windows 10 Professional includes install.esd . The DISM utility needs to create install.wim. The below commands will do just that, in the /sources directory:
+  dism /Get-WimInfo /WimFile:install.esd
+
+  dism /export-image /SourceImageFile:install.esd /SourceIndex:IndexNumber /DestinationImageFile:install.wim /Compress:max /CheckIntegrity
+
 **Task Sequencing**
 
 **PowerShell** 
