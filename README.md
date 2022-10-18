@@ -20,9 +20,9 @@ The ADK, the add-on, and MDT was installed on Windows Server 2016 installation, 
 Once MDT is installed, a Deployment Share is created. From the share, things such as Applications and Operating Systems may be imported, and these processes will generate PowerShell scripts to be used later. Example scripts will be included below.
 
 In order to import the Operating System, an ISO must be mounted and include an install.wim file. Windows 10 Professional includes install.esd . The DISM utility needs to create install.wim. The below commands will do just that, in the /sources directory:
-  dism /Get-WimInfo /WimFile:install.esd
+  ```dism /Get-WimInfo /WimFile:install.esd```
 
-  dism /export-image /SourceImageFile:install.esd /SourceIndex:IndexNumber /DestinationImageFile:install.wim /Compress:max /CheckIntegrity
+  ```dism /export-image /SourceImageFile:install.esd /SourceIndex:IndexNumber /DestinationImageFile:install.wim /Compress:max /CheckIntegrity```
 
 **Task Sequencing**
 
