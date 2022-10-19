@@ -25,7 +25,11 @@ In order to import the Operating System, an ISO must be mounted and include an i
 
   ```dism /export-image /SourceImageFile:install.esd /SourceIndex:IndexNumber /DestinationImageFile:install.wim /Compress:max /CheckIntegrity```
 
+When the standard Windows 10 installation media boots, it loads boot.wim - which is Windows PE. That particular build of Windows PE will then run setup.exe from the root folder. The setup.exe program than uses the Windows 10 images contained in install.wim to install Windows 10 to the target hard drive/SSD. This is why MDT needs to be leveraged for both media types.
+
 **Task Sequencing**
+
+Task Sequencing 
 
 **PowerShell** 
 
