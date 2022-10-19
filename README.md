@@ -29,10 +29,35 @@ When the standard Windows 10 installation media boots, it loads boot.wim - which
 
 **Task Sequencing**
 
-Task Sequencing 
+The Task Sequence is the driving force behind an MDT/SCCM deployment. This is a sequence of events, that includes suchs tasks as:
+  - Hardware configuration
+  - Deploy OS images
+  - Install applications
+  - State restore
+  - Configuration scripts
+
+There are several templates that may be applied are:
+  - Sysprep and Capture
+  - Standard Client Task Sequence
+
+
 
 **PowerShell** 
 
-PowerShell is a fantastic scripting language. This is for a few 
+PowerShell is a fantastic scripting language. It is quite robust, and has a fairly intuitive Verb-Noun structure, such as:
+
+```Get-Help Install-Module```
+
+
+
+
 
 **Automation**
+
+PowerShell scripts work well with Windows Task Scheduler and Group Policy. Task Scheduler employs different trigger mechanisms. 
+
+Time-based triggers start tasks at specified times. This includes starting the task once at a specific time or starting the task multiple times on a daily, weekly, monthly, or monthly day-of-week schedule.
+
+Event-based triggers start a task in response to certain system events. For example, event-based triggers can be set to start a task when the system starts up, when a user logs on to the local computer, or when the system becomes idle.
+
+The ability to have the system initiate the update process at Login, for example, proves quite powerful on an ongoing basis.
